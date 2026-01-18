@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chat Room</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="h-screen flex bg-gray-100">
+    <!-- SIDEBAR -->
+    <aside class="w-64 bg-white border-r p-4">
+      <h2 class="font-bold mb-3">🟢 Online</h2>
+      <ul id="onlineUsers" class="text-sm space-y-1"></ul>
+
+      <button
+        id="leaveBtn"
+        class="mt-6 w-full bg-red-500 text-white py-2 rounded"
+      >
+        Rời phòng
+      </button>
+    </aside>
+
+    <!-- CHAT -->
+    <main class="flex-1 flex flex-col">
+      <div id="roomName" class="p-4 bg-white border-b font-semibold"></div>
+
+      <div
+        id="messages"
+        class="flex flex-col gap-2 p-3 overflow-y-auto h-full"
+      ></div>
+
+      <form id="chatForm" class="p-3 bg-white border-t flex gap-2">
+        <input
+          id="msg"
+          class="flex-1 border rounded px-3 py-2"
+          placeholder="Nhập tin nhắn..."
+        />
+
+        <input type="file" id="imageInput" hidden />
+        <button type="button" id="imageBtn">🖼️</button>
+
+        <button class="bg-blue-500 text-white px-4 rounded">Gửi</button>
+      </form>
+    </main>
+
+    <script src="chat.js"></script>
+  </body>
+</html>

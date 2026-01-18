@@ -1,0 +1,36 @@
+/* bubble chung */
+.msg {
+  max-width: 70%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  word-wrap: break-word;
+}
+
+/* tin nhắn của mình */
+.me {
+  align-self: flex-end;
+  background: #2563eb;
+  color: white;
+  text-align: right;
+}
+
+/* tin nhắn người khác */
+.other {
+  align-self: flex-start;
+  background: #e5e7eb;
+  color: black;
+}
+
+/* system message */
+.system {
+  align-self: center;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ảnh trong chat */
+.msg img {
+  margin-top: 6px;
+  max-width: 200px;
+  border-radius: 8px;
+}

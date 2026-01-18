@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Join Chat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-screen flex items-center justify-center bg-gray-100">
+  <div class="bg-white p-6 rounded shadow w-80">
+    <h1 class="text-xl font-bold mb-4 text-center">Vào phòng chat</h1>
+
+    <input
+      id="username"
+      class="border p-2 w-full rounded mb-3"
+      placeholder="Tên của bạn"
+    />
+
+    <select
+      id="room"
+      class="border p-2 w-full rounded mb-4"
+    >
+      <option value="general">Phòng chung</option>
+      <option value="tech">Công nghệ</option>
+      <option value="game">Game</option>
+    </select>
+
+    <button
+      onclick="joinChat()"
+      class="bg-blue-500 text-white w-full py-2 rounded"
+    >
+      Vào chat
+    </button>
+  </div>
+
+  <script>
+    function joinChat() {
+      const u = username.value.trim();
+      const r = room.value;
+      if (!u) return alert("Nhập tên!");
+
+      location.href = `/chat.html?username=${encodeURIComponent(u)}&room=${r}`;
+    }
+  </script>
+</body>
+</html>
