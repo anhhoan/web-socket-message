@@ -34,3 +34,56 @@
   max-width: 200px;
   border-radius: 8px;
 }
+.msg-wrapper {
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.msg-wrapper.me {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.msg-wrapper.other {
+  align-self: flex-start;
+}
+
+.bubble {
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+}
+
+.msg-wrapper.other .bubble {
+  background: #e5e7eb;
+  color: black;
+}
+
+.status {
+  font-size: 11px;
+  opacity: 0.6;
+  margin-top: 2px;
+}
+
+.msg-wrapper.me .status {
+  text-align: right;
+}
+
+.actions {
+  font-size: 11px;
+  color: #f87171;
+}
+
+.actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.bubble img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 6px;
+}

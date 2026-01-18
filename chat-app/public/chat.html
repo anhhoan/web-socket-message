@@ -4,20 +4,26 @@
     <meta charset="UTF-8" />
     <title>Chat Room</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Socket.IO -->
     <script src="/socket.io/socket.io.js"></script>
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body class="h-screen flex bg-gray-100">
     <!-- SIDEBAR -->
-    <aside class="w-64 bg-white border-r p-4">
+    <aside class="w-64 bg-white border-r p-4 flex flex-col">
       <h2 class="font-bold mb-3">🟢 Online</h2>
-      <ul id="onlineUsers" class="text-sm space-y-1"></ul>
+      <ul id="onlineUsers" class="text-sm space-y-1 flex-1"></ul>
 
       <button
         id="leaveBtn"
-        class="mt-6 w-full bg-red-500 text-white py-2 rounded"
+        class="mt-4 bg-red-500 hover:bg-red-600 text-white py-2 rounded"
       >
         Rời phòng
       </button>
@@ -25,24 +31,48 @@
 
     <!-- CHAT -->
     <main class="flex-1 flex flex-col">
-      <div id="roomName" class="p-4 bg-white border-b font-semibold"></div>
-
+      <!-- Room name -->
       <div
-        id="messages"
-        class="flex flex-col gap-2 p-3 overflow-y-auto h-full"
+        id="roomName"
+        class="p-4 bg-white border-b font-semibold"
       ></div>
 
-      <form id="chatForm" class="p-3 bg-white border-t flex gap-2">
+      <!-- Messages -->
+      <div
+        id="messages"
+        class="flex flex-col gap-2 p-3 overflow-y-auto flex-1"
+      ></div>
+
+      <!-- Typing -->
+      <div id="typing" class="px-3 text-sm text-gray-500"></div>
+
+      <!-- Form -->
+      <form
+        id="chatForm"
+        class="p-3 bg-white border-t flex gap-2 items-center"
+      >
         <input
           id="msg"
+          autocomplete="off"
           class="flex-1 border rounded px-3 py-2"
           placeholder="Nhập tin nhắn..."
         />
 
         <input type="file" id="imageInput" hidden />
-        <button type="button" id="imageBtn">🖼️</button>
+        <button
+          type="button"
+          id="imageBtn"
+          class="text-xl"
+          title="Gửi ảnh"
+        >
+          🖼️
+        </button>
 
-        <button class="bg-blue-500 text-white px-4 rounded">Gửi</button>
+        <button
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+        >
+          Gửi
+        </button>
       </form>
     </main>
 
